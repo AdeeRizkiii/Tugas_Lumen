@@ -11,7 +11,7 @@ class Post extends Model
     //protected $table ='table_name
 
     //define column name
-    protected $fillable = array ('title', 'content', 'status', 'user_id');
+    protected $fillable = array ('title', 'content', 'status', 'user_id','image','video');
 
     //untuk melakukan table field created_at dan updated_at secara otomatis
     public $timestamps = true;

@@ -28,7 +28,14 @@ $router->group(['middleware' => ['auth']], function () use ($router) {
     $router->get('posts/{id}', 'PostsController@show');
     $router->put('posts/{id}','PostsController@update');
     $router->delete('posts/{id}','PostsController@destroy');
+    $router->get('posts/image/{imageName}', 'PostController@image');
+    $router->get('posts/video/{videoName}', 'PostController@video');
+
+    $router->post('profiles','ProfilesController@store');
 });
+//images/profiles
+$router->get('/profiles/{userId}', 'ProfilesController@show');
+$router->get('/profiles/image/{imageName}', 'ProfilesController@image');
 
 $router->get('/public/posts','PublicController\PostsController@index');
 $router->get('/public/posts/{id}','PublicController\PostsController@show');
