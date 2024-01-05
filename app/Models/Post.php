@@ -15,4 +15,8 @@ class Post extends Model
 
     //untuk melakukan table field created_at dan updated_at secara otomatis
     public $timestamps = true;
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

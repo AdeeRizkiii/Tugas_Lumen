@@ -28,7 +28,10 @@ $router->group(['middleware' => ['auth']], function () use ($router) {
     $router->get('posts/{id}', 'PostsController@show');
     $router->put('posts/{id}','PostsController@update');
     $router->delete('posts/{id}','PostsController@destroy');
-});    
+});
+
+$router->get('/public/posts','PublicController\PostsController@index');
+$router->get('/public/posts/{id}','PublicController\PostsController@show');
 
 //Student 
 $router->group(['middleware' => 'auth'], function () use ($router) {

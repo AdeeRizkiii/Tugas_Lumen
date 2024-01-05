@@ -40,4 +40,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public function getJWTCustomClaims(){
         return[];
     }
+
+    public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
 }
